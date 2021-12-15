@@ -29,7 +29,7 @@ public class HelloWorldResource {
 	private TokenManager tokenManager;
 
 	@PostMapping("/login")
-	public ResponseEntity<JwtResponseModel> createToken(@RequestBody JwtRequestModel request) throws Exception {
+	public ResponseEntity<?> createToken(@RequestBody JwtRequestModel request) throws Exception {
 		try {
 			authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
